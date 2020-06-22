@@ -12,13 +12,16 @@ app.use(morgan('combined'));
 // Configuration
 var port = process.env.PORT || 8080;
 var message = process.env.MESSAGE || "Hello world!";
+var version = process.env.APP_VERSION || "2.0";
 
 app.get('/', function (req, res) {
     res.render('home', {
       message: message,
       platform: os.type(),
       release: os.release(),
-      hostName: os.hostname()
+      hostName: os.hostname(),
+      envVars: JSON.stringify(process.env, null, 2),
+      version: version
     });
 });
 

@@ -4,12 +4,20 @@
 <div id="info">
   <table>
     <tr>
-      <th>pod:</th>
+      <th>App Version:</th>
+      <td>{{ version }}</td>
+    </tr>
+    <tr>
+      <th>Pod:</th>
       <td>{{ hostName }}</td>
     </tr>
     <tr>
-      <th>node:</th>
+      <th>Node:</th>
       <td>{{ platform }} ({{ release }})</td>
+    </tr>
+    <tr>
+      <th>Environment Variables:</th>
+      <td><pre class="envVars">{{envVars}}</pre></td>
     </tr>
   </table>
 
